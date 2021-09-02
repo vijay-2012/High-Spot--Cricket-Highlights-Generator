@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+   <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+</head>   
+   <title>Highlights Extractor</title>
+<p>
+{% with messages = get_flashed_messages() %}
+{% if messages %}</p>
+<ul class=flashes>
+{% for message in messages %}
+<li>{{ message }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<div align="center">
+   <h1>Cricket Highlights Extractor</h1>
+   <h2>Download extracted highlights video</h2>
+   <p>      
+      <video width="400" controls>
+        <source src="{{ url_for('download_file', output_filename = output_filename) }}" >
+            Your browser does not support HTML5 video.
+            <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+      </video>
+   </p>
+      <!--  <a href="{{ url_for('download_file', output_filename = output_filename) }}"><button class='btn btn-default'>Download</button></a>
+         -->
+      <a href="{{ url_for('download_file', output_filename = output_filename) }}"><button class='btn btn-default'>Download</button></a>
+      
+   <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+   <!--   <script src="static\js\main.js"></script>
+-->
+   <!--  Below link code is working  -->
+<!--   <a href="{{ url_for('download_file', output_filename = output_filename) }}">Download</a> -->
+
+      
+</div>
+

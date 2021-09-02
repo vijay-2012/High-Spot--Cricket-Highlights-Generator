@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+   <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+</head>
+
+   
+   <title>Highlights Extractor</title>
+<p>
+{% with messages = get_flashed_messages() %}
+{% if messages %}</p>
+<ul class=flashes>
+{% for message in messages %}
+<li>{{ message }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<div align="center">
+   <h1>Cricket Highlights Extractor</h1>
+   <h2>Upload Full match video clip</h2>
+   <p>
+      
+      <video width="400" controls>
+        <source src="" id="video_here">
+            Your browser does not support HTML5 video. 
+        </video>
+      
+      <form method="post" action="/" enctype="multipart/form-data">
+         <p>
+            <input type="file" name="file" class="file_multi_video" accept="video/*"  autocomplete="off" required>
+         </p>
+         
+         <input type="submit" value="Upload">
+      </form>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="static\js\main.js"></script>
+
+      
+</div>
+
