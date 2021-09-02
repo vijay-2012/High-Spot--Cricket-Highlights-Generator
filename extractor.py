@@ -17,8 +17,8 @@ import time
 import datetime
 from duration import to_seconds, to_timedelta
 
-SAVED_MODEL_PATH = 'nn_ad_trained - 2.h5'
-SAVED_LABEL_PATH = 'model_classes_ad.npy'
+SAVED_MODEL_PATH = 'nn_model.h5'
+SAVED_LABEL_PATH = 'model_classes.npy'
 
 class _extractor:
 
@@ -188,12 +188,9 @@ class _extractor:
         return TARGET_VIDEO
 
 def Extractor():
-    """Factory function for extractor class.
+    
 
-    :return _extractor._instance (_Keyword_Spotting_Service):
-    """
-
-    # ensure an instance is created only the first time the factory function is called
+    
     if _extractor._instance is None:
         _extractor._instance = _extractor()
         _extractor.model = keras.models.load_model(SAVED_MODEL_PATH)
@@ -206,7 +203,7 @@ if __name__ == "__main__":
     # create instance
     #ext = Extractor()
 
-    # make a prediction
+    
     #path = ext.upload()
     #path = ext.upload()
     #filename = ext.generate_highlights(path)
